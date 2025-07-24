@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+redis
+sqlmodel
+pydantic-settings
+python-dotenv
+alembic
+asyncpg
+httpx
+passlib[bcrypt]
+python-jose
+psycopg2-binary
+python-multipart

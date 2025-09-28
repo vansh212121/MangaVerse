@@ -36,12 +36,8 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 <div align="center">
 
 ### **Live Demo**
-<p align="center">
-  <a href="demo/mangaverse-demo.mp4">
-    <img src="demo/thumbnail.png" alt="▶ Watch Demo" width="720">
-  </a>
-</p>
 
+<video controls src="demo/manga_recording.mp4" title="Title"></video>
 
 ### **Application Preview**
 <table>

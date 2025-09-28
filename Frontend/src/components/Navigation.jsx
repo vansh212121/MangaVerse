@@ -3,9 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Search, Menu, X } from "lucide-react";
 import { SearchBar } from "./SearchBar";
 import { Button } from "@/components/ui/button";
-
-// --- Zustand Store Import ---
-// Import our new global auth store
 import { useAuthStore } from "@/store/useAuthStore";
 
 export const Navigation = () => {
@@ -17,7 +14,6 @@ export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // --- Global Reactive Auth State ---
-  // Replaces the direct localStorage check. This is now reactive.
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const clearToken = useAuthStore((state) => state.clearToken);
 
@@ -162,9 +158,12 @@ export const Navigation = () => {
               })}
               <div className="flex gap-2 pt-4 border-t border-border">
                 {isAuthenticated ? (
-                   <Button onClick={handleLogout} className="flex-1 gradient-anime text-white">
-                     Logout
-                   </Button>
+                  <Button
+                    onClick={handleLogout}
+                    className="flex-1 gradient-anime text-white"
+                  >
+                    Logout
+                  </Button>
                 ) : (
                   <>
                     <Button
@@ -174,7 +173,10 @@ export const Navigation = () => {
                     >
                       <Link to="/login">Log In</Link>
                     </Button>
-                    <Button asChild className="flex-1 gradient-anime text-white">
+                    <Button
+                      asChild
+                      className="flex-1 gradient-anime text-white"
+                    >
                       <Link to="/signup">Sign Up</Link>
                     </Button>
                   </>

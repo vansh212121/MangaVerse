@@ -21,8 +21,6 @@ import {
 } from "@/components/ui/pagination";
 import SkeletonGrid from "@/components/SkeletonGrid";
 import EmptyState from "@/components/EmptyState";
-
-// Import our new custom hook for pagination
 import { usePaginatedManga } from "@/hooks/useMangaQueries";
 
 const Catalog = () => {
@@ -41,10 +39,8 @@ const Catalog = () => {
     if (!data?.mangas) return [];
     return data.mangas.map((m) => ({
       id: m.mal_id,
-      cover: m.cover_url, // Match the prop MangaCard expects
-      // Pass through all other properties
+      cover: m.cover_url,
       ...m,
-      // Ensure tags is always an array for the filter logic
       tags: m.tags || [],
     }));
   }, [data]);
@@ -54,9 +50,7 @@ const Catalog = () => {
 
     if (selectedGenre !== "all") {
       filtered = filtered.filter((m) =>
-        m.tags.some(
-          (tag) => tag?.toLowerCase() === selectedGenre.toLowerCase()
-        )
+        m.tags.some((tag) => tag?.toLowerCase() === selectedGenre.toLowerCase())
       );
     }
 
@@ -81,11 +75,21 @@ const Catalog = () => {
 
     setFilteredManga(filtered);
   }, [manga, selectedGenre, selectedStatus, sortBy]);
-  
+
   const genres = [
-    "All", "Action", "Adventure", "Comedy", "Drama", "Fantasy", "Horror", "Romance", "Sci-Fi", "Sports", "Thriller",
+    "All",
+    "Action",
+    "Adventure",
+    "Comedy",
+    "Drama",
+    "Fantasy",
+    "Horror",
+    "Romance",
+    "Sci-Fi",
+    "Sports",
+    "Thriller",
   ];
-  const statuses = ["All", "Finished", "Publishing", "On Hiatus"]; // Updated to match Jikan API status strings
+  const statuses = ["All", "Finished", "Publishing", "On Hiatus"];
 
   return (
     <div className="min-h-screen bg-background">
@@ -118,27 +122,60 @@ const Catalog = () => {
               <div className="hidden lg:flex items-center gap-4">
                 {/* Select components remain unchanged */}
                 <Select value={selectedGenre} onValueChange={setSelectedGenre}>
-                    <SelectTrigger className="w-40"><SelectValue placeholder="Genre" /></SelectTrigger>
-                    <SelectContent>{genres.map((genre) => (<SelectItem key={genre} value={genre.toLowerCase()}>{genre}</SelectItem>))}</SelectContent>
+                  <SelectTrigger className="w-40">
+                    <SelectValue placeholder="Genre" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {genres.map((genre) => (
+                      <SelectItem key={genre} value={genre.toLowerCase()}>
+                        {genre}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
                 </Select>
-                <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-                    <SelectTrigger className="w-40"><SelectValue placeholder="Status" /></SelectTrigger>
-                    <SelectContent>{statuses.map((status) => (<SelectItem key={status} value={status.toLowerCase()}>{status}</SelectItem>))}</SelectContent>
+                <Select
+                  value={selectedStatus}
+                  onValueChange={setSelectedStatus}
+                >
+                  <SelectTrigger className="w-40">
+                    <SelectValue placeholder="Status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {statuses.map((status) => (
+                      <SelectItem key={status} value={status.toLowerCase()}>
+                        {status}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
                 </Select>
                 <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-40"><SelectValue placeholder="Sort by" /></SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="popularity">Popularity</SelectItem>
-                        <SelectItem value="title">Title</SelectItem>
-                        <SelectItem value="year">Year</SelectItem>
-                        <SelectItem value="rating">Rating</SelectItem>
-                    </SelectContent>
+                  <SelectTrigger className="w-40">
+                    <SelectValue placeholder="Sort by" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="popularity">Popularity</SelectItem>
+                    <SelectItem value="title">Title</SelectItem>
+                    <SelectItem value="year">Year</SelectItem>
+                    <SelectItem value="rating">Rating</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant={viewMode === "grid" ? "default" : "outline"} size="sm" onClick={() => setViewMode("grid")}><Grid className="w-4 h-4" /></Button>
-              <Button variant={viewMode === "list" ? "default" : "outline"} size="sm" onClick={() => setViewMode("list")}><List className="w-4 h-4" /></Button>
+              <Button
+                variant={viewMode === "grid" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setViewMode("grid")}
+              >
+                <Grid className="w-4 h-4" />
+              </Button>
+              <Button
+                variant={viewMode === "list" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setViewMode("list")}
+              >
+                <List className="w-4 h-4" />
+              </Button>
             </div>
           </div>
           {/* Mobile and Active Filters remain unchanged */}
@@ -159,22 +196,56 @@ const Catalog = () => {
         ) : (
           <>
             {/* Manga Grid/List (UI Unchanged) */}
-            {viewMode === 'grid' ? (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-                    {filteredManga.map((m, index) => (<div key={m.id} style={{ animationDelay: `${index * 0.05}s` }} className="animate-fade-in"><MangaCard manga={m} /></div>))}
-                </div>
+            {viewMode === "grid" ? (
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                {filteredManga.map((m, index) => (
+                  <div
+                    key={m.id}
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                    className="animate-fade-in"
+                  >
+                    <MangaCard manga={m} />
+                  </div>
+                ))}
+              </div>
             ) : (
-                <div className="space-y-4">
-                    {filteredManga.map((m, index) => (<div key={m.id} style={{ animationDelay: `${index * 0.05}s` }} className="animate-fade-in bg-card rounded-lg p-4 flex gap-4 hover:bg-card/80 transition-colors">
-                        <img src={m.cover} alt={m.title} className="w-16 h-24 object-cover rounded" />
-                        <div className="flex-1">
-                            <h3 className="font-semibold text-lg mb-1">{m.title}</h3>
-                            <p className="text-muted-foreground text-sm mb-2">{m.author}</p>
-                            <div className="flex flex-wrap gap-1 mb-2">{m.tags.slice(0, 3).map((tag) => (<Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>))}</div>
-                            <div className="flex items-center gap-4 text-sm text-muted-foreground"><span>★ {m.rating}</span><span>{m.year}</span><span>{m.status}</span></div>
-                        </div>
-                    </div>))}
-                </div>
+              <div className="space-y-4">
+                {filteredManga.map((m, index) => (
+                  <div
+                    key={m.id}
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                    className="animate-fade-in bg-card rounded-lg p-4 flex gap-4 hover:bg-card/80 transition-colors"
+                  >
+                    <img
+                      src={m.cover}
+                      alt={m.title}
+                      className="w-16 h-24 object-cover rounded"
+                    />
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg mb-1">{m.title}</h3>
+                      <p className="text-muted-foreground text-sm mb-2">
+                        {m.author}
+                      </p>
+                      <div className="flex flex-wrap gap-1 mb-2">
+                        {m.tags.slice(0, 3).map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="outline"
+                            className="text-xs"
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span>★ {m.rating}</span>
+                        <span>{m.year}</span>
+                        <span>{m.status}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             )}
 
             {/* Pagination */}
@@ -187,7 +258,7 @@ const Catalog = () => {
                   />
                 </PaginationItem>
                 <PaginationItem>
-                  <PaginationNext 
+                  <PaginationNext
                     onClick={() => setPage((prev) => prev + 1)}
                     disabled={!data?.pagination?.has_next_page}
                   />
@@ -196,14 +267,26 @@ const Catalog = () => {
             </Pagination>
           </>
         )}
-        
+
         {!isLoading && !isError && filteredManga.length === 0 && (
-            <div className="text-center py-16">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 animate-float"><span className="text-3xl">📚</span></div>
-                <h3 className="text-2xl font-bold mb-4">No manga found</h3>
-                <p className="text-muted-foreground mb-6">Try adjusting your filters to find more manga.</p>
-                <Button onClick={() => { setSelectedGenre("all"); setSelectedStatus("all"); }} className="gradient-blue hover:gradient-blue-dark text-white">Clear Filters</Button>
+          <div className="text-center py-16">
+            <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
+              <span className="text-3xl">📚</span>
             </div>
+            <h3 className="text-2xl font-bold mb-4">No manga found</h3>
+            <p className="text-muted-foreground mb-6">
+              Try adjusting your filters to find more manga.
+            </p>
+            <Button
+              onClick={() => {
+                setSelectedGenre("all");
+                setSelectedStatus("all");
+              }}
+              className="gradient-blue hover:gradient-blue-dark text-white"
+            >
+              Clear Filters
+            </Button>
+          </div>
         )}
       </main>
     </div>

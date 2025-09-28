@@ -5,36 +5,57 @@ import { Button } from "@/components/ui/button";
 import SakuraPetals from "@/components/SakuraPetals";
 import SkeletonGrid from "@/components/SkeletonGrid";
 import EmptyState from "@/components/EmptyState";
-import popularMangaData from "@/data/popularManga"; // Renamed for clarity
+import popularMangaData from "@/data/popularManga"; 
 import Footer from "@/components/Footer";
 
 // Import the new custom hooks we created
 import {
   useTopManga,
-  useMangaByGenre, // Corrected: Using the generic genre hook
+  useMangaByGenre,
   useRecommendedManga,
 } from "@/hooks/useMangaQueries";
 
 const Index = () => {
-
   const heroSectionManga = {
     id: "featured-1",
     title: "Jujutsu Kaisen",
     author: "Akutami, Gege",
-    cover: "https://wallpapers-clan.com/wp-content/uploads/2025/01/jjk-satoru-gojo-dark-clothes-desktop-wallpaper-preview.jpg",
+    cover:
+      "https://wallpapers-clan.com/wp-content/uploads/2025/01/jjk-satoru-gojo-dark-clothes-desktop-wallpaper-preview.jpg",
     status: "finished",
     tags: ["Action", "Horror", "Supernatural", "Shounen"],
     rating: 8.72,
-    description: "Jujutsu Kaisen follows Yuji Itadori, a high school student who becomes a Jujutsu Sorcerer after unknowingly consuming a cursed object...",
+    description:
+      "Jujutsu Kaisen follows Yuji Itadori, a high school student who becomes a Jujutsu Sorcerer after unknowingly consuming a cursed object...",
     year: 2019,
     episodes: 271,
   };
   const popularManga = popularMangaData;
 
-  const { data: favouriteManga, isLoading: isLoadingFavourite, error: favouriteError, refetch: refetchFavourite } = useTopManga('favorite');
-  const { data: isekaiManga, isLoading: isLoadingIsekai, error: isekaiError, refetch: refetchIsekai } = useMangaByGenre(62); // Corrected: Pass genre ID 62 for Isekai
-  const { data: recommendedManga, isLoading: isLoadingRecommended, error: recommendedError, refetch: refetchRecommended } = useRecommendedManga();
-  const { data: romanceManga, isLoading: isLoadingRomance, error: romanceError, refetch: refetchRomance } = useMangaByGenre(22); // Corrected: Pass genre ID 22 for Romance
+  const {
+    data: favouriteManga,
+    isLoading: isLoadingFavourite,
+    error: favouriteError,
+    refetch: refetchFavourite,
+  } = useTopManga("favorite");
+  const {
+    data: isekaiManga,
+    isLoading: isLoadingIsekai,
+    error: isekaiError,
+    refetch: refetchIsekai,
+  } = useMangaByGenre(62); 
+  const {
+    data: recommendedManga,
+    isLoading: isLoadingRecommended,
+    error: recommendedError,
+    refetch: refetchRecommended,
+  } = useRecommendedManga();
+  const {
+    data: romanceManga,
+    isLoading: isLoadingRomance,
+    error: romanceError,
+    refetch: refetchRomance,
+  } = useMangaByGenre(22); 
 
   return (
     <div className="min-h-screen bg-background">
@@ -55,7 +76,10 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Favourite Manga
               </h2>
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Show More
               </Button>
             </div>
@@ -74,8 +98,13 @@ const Index = () => {
                     style={{ animationDelay: `${index * 0.05}s` }}
                     className="animate-fade-in"
                   >
-                    {/* FIX: Pass the 'cover' prop that MangaCard expects */}
-                    <MangaCard manga={{ ...manga, cover: manga.cover_url, id: manga.mal_id }} />
+                    <MangaCard
+                      manga={{
+                        ...manga,
+                        cover: manga.cover_url,
+                        id: manga.mal_id,
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -88,7 +117,10 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Isekai Manga
               </h2>
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Show More
               </Button>
             </div>
@@ -108,7 +140,13 @@ const Index = () => {
                     className="animate-fade-in"
                   >
                     {/* FIX: Pass the 'cover' prop that MangaCard expects */}
-                    <MangaCard manga={{ ...manga, cover: manga.cover_url, id: manga.mal_id }} />
+                    <MangaCard
+                      manga={{
+                        ...manga,
+                        cover: manga.cover_url,
+                        id: manga.mal_id,
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -121,7 +159,10 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Recommended For You
               </h2>
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Show More
               </Button>
             </div>
@@ -141,7 +182,13 @@ const Index = () => {
                     className="animate-fade-in"
                   >
                     {/* FIX: Pass the 'cover' prop that MangaCard expects */}
-                    <MangaCard manga={{ ...manga, cover: manga.cover_url, id: manga.mal_id }} />
+                    <MangaCard
+                      manga={{
+                        ...manga,
+                        cover: manga.cover_url,
+                        id: manga.mal_id,
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -154,7 +201,10 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Romance Manga
               </h2>
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Show More
               </Button>
             </div>
@@ -174,7 +224,13 @@ const Index = () => {
                     className="animate-fade-in"
                   >
                     {/* FIX: Pass the 'cover' prop that MangaCard expects */}
-                    <MangaCard manga={{ ...manga, cover: manga.cover_url, id: manga.mal_id }} />
+                    <MangaCard
+                      manga={{
+                        ...manga,
+                        cover: manga.cover_url,
+                        id: manga.mal_id,
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -187,7 +243,10 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Most Popular
               </h2>
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              <Button
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Show More
               </Button>
             </div>
@@ -211,4 +270,3 @@ const Index = () => {
 };
 
 export default Index;
-

@@ -13,7 +13,6 @@ import { useLogin } from "@/hooks/useUserQueries";
 import { useAuthStore } from "@/store/useAuthStore";
 
 const Login = () => {
-  // --- Local UI State (Unchanged) ---
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -37,7 +36,7 @@ const Login = () => {
     e.preventDefault();
 
     const params = new URLSearchParams();
-    params.append("username", formData.email); // FastAPI OAuth expects 'username'
+    params.append("username", formData.email); 
     params.append("password", formData.password);
 
     loginMutation.mutate(params, {

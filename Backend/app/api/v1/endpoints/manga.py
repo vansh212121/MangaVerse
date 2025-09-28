@@ -12,7 +12,6 @@ from app.schemas.manga_schema import (
     MangaRead,
     MangaUpdate,
     UserCollectionManga,
-
 )
 from app.services import manga_service
 
@@ -91,6 +90,7 @@ async def add_manga_to_collection(
     return await manga_service.add_manga_to_collection_service(
         mal_id=manga_in.mal_id, current_user=current_user, db=db
     )
+
 
 @router.put("/manga/collection/{mal_id}", response_model=MangaRead)
 async def update_manga_status(

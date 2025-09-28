@@ -53,5 +53,4 @@ def verify_token(token: str) -> dict:
         )
         return payload
     except JWTError as e:
-        # Re-raising the original JWTError allows for specific error handling later
         raise e

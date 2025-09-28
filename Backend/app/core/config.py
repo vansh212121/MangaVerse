@@ -6,7 +6,7 @@ env_path = Path(".") / ".env"
 
 class Settings(BaseSettings):
     # Your settings like DATABASE_URL and SECRET_KEY
-    DATABASE_URL: str 
+    DATABASE_URL: str
     SECRET_KEY: str
     REDIS_URL : str
     
@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
 
     model_config = SettingsConfigDict(
-        env_file=env_path,  # Use the absolute path here
+        env_file=env_path, 
         case_sensitive=True,
         extra='ignore'
     )

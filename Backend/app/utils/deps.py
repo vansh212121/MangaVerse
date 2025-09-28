@@ -12,9 +12,9 @@ from app.schemas.token_schema import TokenData
 # This URL must match the path to your login endpoint exactly
 reusable_oauth2 = OAuth2PasswordBearer(tokenUrl="/api/v1/login")
 
+
 async def get_current_user(
-    token: str = Depends(reusable_oauth2),
-    db: AsyncSession = Depends(get_session)
+    token: str = Depends(reusable_oauth2), db: AsyncSession = Depends(get_session)
 ) -> User:
     """
     Dependency to get the current user from a JWT token.
@@ -32,9 +32,9 @@ async def get_current_user(
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    
+
     user = await user_crud.get_user_by_email(email=token_data.sub, db=db)
     if user is None:
         raise credentials_exception
-    
+
     return user

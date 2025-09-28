@@ -13,8 +13,6 @@ export const FeaturedManga = ({ manga }) => {
   const { data: userCollection } = useUserCollection();
   const addMangaMutation = useAddMangaToCollection();
 
-  // Check if the manga is bookmarked by looking through the user's collection.
-  // Note: Your static data uses 'id', our API uses 'mal_id'. We check for both.
   const isBookmarked = userCollection?.some(
     (item) => item.mal_id === (manga.mal_id || manga.id)
   );

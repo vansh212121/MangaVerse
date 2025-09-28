@@ -25,15 +25,11 @@ class UserMangaLink(SQLModel, table=True):
     user_id: int = Field(foreign_key="user.id", primary_key=True)
     manga_id: int = Field(foreign_key="manga.id", primary_key=True)
 
-    # --- CORRECTED FIELDS ---
-
-    # For the status, 'nullable=False' must go inside the Column
     status: MangaStatus = Field(
         default=MangaStatus.PLANNED,
         sa_column=Column(Enum(MangaStatus), nullable=False)
     )
 
-    # For added_at, both 'nullable' and 'server_default' go inside the Column
     added_at: datetime.datetime = Field(
         default=None,
         sa_column=Column(nullable=False, server_default=func.now())
@@ -41,6 +37,7 @@ class UserMangaLink(SQLModel, table=True):
     
     manga: Optional["Manga"] = Relationship(back_populates="user_links")
     user: "User" = Relationship(back_populates="manga_links")
+    
 # -----------------
 # 3. The lean Manga Table (for reference)
 # -----------------

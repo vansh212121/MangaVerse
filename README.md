@@ -37,28 +37,28 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 
 ### **Live Demo**
 
-<video controls src="demo/manga_recording.mp4" title="Title"></video>
+
 
 ### **Application Preview**
 <table>
 <tr>
 <td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Manga+Discovery" alt="Discovery Page" width="400"/>
-<br><strong>🔍 Discovery Dashboard</strong>
+<img src="demo/home.png" alt="Discovery Page" width="400"/>
+<br><strong>🔍 Home Dashboard</strong>
 </td>
 <td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Personal+Collection" alt="Collection Page" width="400"/>
+<img src="demo/collection.png" alt="Collection Page" width="400"/>
 <br><strong>📚 Personal Collection</strong>
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Manga+Details" alt="Details Page" width="400"/>
-<br><strong>📖 Detailed Manga View</strong>
+<img src="demo/catalog.png" alt="Details Page" width="400"/>
+<br><strong>📖 Manga Catalog</strong>
 </td>
 <td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Reading+Progress" alt="Progress Tracking" width="400"/>
-<br><strong>📊 Progress Tracking</strong>
+<img src="demo/news.png alt="Progress Tracking" width="400"/>
+<br><strong>📊 News </strong>
 </td>
 </tr>
 </table>

@@ -36,7 +36,7 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 <div align="center">
 
 ### **Live Demo**
-[![Watch Demo](demo/thumbnail.png)](https://raw.githubusercontent.com/vansh212121/MangaVerse/main/demo/mangaverse-demo.mp4)
+[![Watch Demo](demo/thumbnail.png)](https://raw.githubusercontent.com/vansh212121/MangaVerse/main/demo/manga_recording.mp4)
 
 ### **Application Preview**
 <table>

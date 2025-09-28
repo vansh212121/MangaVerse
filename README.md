@@ -57,7 +57,7 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 <br><strong>📖 Manga Catalog</strong>
 </td>
 <td align="center">
-<img src="demo/news.png alt="Progress Tracking" width="400"/>
+<img src="demo/news.png" alt="Progress Tracking" width="400"/>
 <br><strong>📊 News </strong>
 </td>
 </tr>

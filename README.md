@@ -31,6 +31,44 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 
 ---
 
+## 🎥 **Demo & Screenshots**
+
+<div align="center">
+
+### **🎬 Live Application Demo**
+
+https://github.com/your_username/mangaverse/assets/your_user_id/manga-recording.mp4
+
+*Complete walkthrough of MangaVerse features and functionality*
+
+### **📱 Application Screenshots**
+<table>
+<tr>
+<td align="center">
+<img src="demo/discovery-page.png" alt="Discovery Page" width="400"/>
+<br><strong>🔍 Manga Discovery Dashboard</strong>
+</td>
+<td align="center">
+<img src="demo/collection-page.png" alt="Collection Page" width="400"/>
+<br><strong>📚 Personal Collection Management</strong>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="demo/manga-details.png" alt="Details Page" width="400"/>
+<br><strong>📖 Detailed Manga Information</strong>
+</td>
+<td align="center">
+<img src="demo/progress-tracking.png" alt="Progress Tracking" width="400"/>
+<br><strong>📊 Reading Progress Tracking</strong>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
 ## ✨ **Key Features**
 
 <table>
@@ -191,7 +229,7 @@ graph TB
 <div align="center">
 
 ### **Live Demo**
-[![Demo](https://img.shields.io/badge/🎬_Live_Demo-Coming_Soon-ff6b6b?style=for-the-badge)](https://mangaverse-demo.vercel.app)
+[![Demo](https://img.shields.io/badge/🎬_Live_Demo-Coming_Soon-ff6b6b?style=for-the-badge)](demo/mangaverse-demo.mp4)
 
 ### **Application Preview**
 <table>
@@ -464,6 +502,7 @@ const useAuthStore = create((set) => ({
 
 ### **Code Quality Standards**
 - **🔍 Linting**: ESLint + Prettier for consistent formatting
+- **🧪 Testing**: Jest + React Testing Library
 - **📝 Type Safety**: TypeScript throughout the frontend
 - **🔒 Security**: Input validation and sanitization
 

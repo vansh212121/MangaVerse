@@ -35,37 +35,35 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 
 <div align="center">
 
-### **🎬 Live Application Demo**
+### **Live Demo**
+[![Demo](https://img.shields.io/badge/🎬_Live_Demo-Coming_Soon-ff6b6b?style=for-the-badge)](demo/mangaverse-demo.mp4)
 
-https://github.com/your_username/mangaverse/assets/your_user_id/manga-recording.mp4
-
-*Complete walkthrough of MangaVerse features and functionality*
-
-### **📱 Application Screenshots**
+### **Application Preview**
 <table>
 <tr>
 <td align="center">
-<img src="demo/discovery-page.png" alt="Discovery Page" width="400"/>
-<br><strong>🔍 Manga Discovery Dashboard</strong>
+<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Manga+Discovery" alt="Discovery Page" width="400"/>
+<br><strong>🔍 Discovery Dashboard</strong>
 </td>
 <td align="center">
-<img src="demo/collection-page.png" alt="Collection Page" width="400"/>
-<br><strong>📚 Personal Collection Management</strong>
+<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Personal+Collection" alt="Collection Page" width="400"/>
+<br><strong>📚 Personal Collection</strong>
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="demo/manga-details.png" alt="Details Page" width="400"/>
-<br><strong>📖 Detailed Manga Information</strong>
+<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Manga+Details" alt="Details Page" width="400"/>
+<br><strong>📖 Detailed Manga View</strong>
 </td>
 <td align="center">
-<img src="demo/progress-tracking.png" alt="Progress Tracking" width="400"/>
-<br><strong>📊 Reading Progress Tracking</strong>
+<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Reading+Progress" alt="Progress Tracking" width="400"/>
+<br><strong>📊 Progress Tracking</strong>
 </td>
 </tr>
 </table>
 
 </div>
+
 
 ---
 
@@ -221,41 +219,6 @@ graph TB
 ```
 
 </details>
-
----
-
-## 🎥 **Demo & Screenshots**
-
-<div align="center">
-
-### **Live Demo**
-[![Demo](https://img.shields.io/badge/🎬_Live_Demo-Coming_Soon-ff6b6b?style=for-the-badge)](demo/mangaverse-demo.mp4)
-
-### **Application Preview**
-<table>
-<tr>
-<td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Manga+Discovery" alt="Discovery Page" width="400"/>
-<br><strong>🔍 Discovery Dashboard</strong>
-</td>
-<td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Personal+Collection" alt="Collection Page" width="400"/>
-<br><strong>📚 Personal Collection</strong>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Manga+Details" alt="Details Page" width="400"/>
-<br><strong>📖 Detailed Manga View</strong>
-</td>
-<td align="center">
-<img src="https://placehold.co/400x300/f8f9fa/6c757d?text=Reading+Progress" alt="Progress Tracking" width="400"/>
-<br><strong>📊 Progress Tracking</strong>
-</td>
-</tr>
-</table>
-
-</div>
 
 ---
 

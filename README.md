@@ -311,13 +311,6 @@ Create a `.env.local` file in the `frontend/` directory:
 # Backend API Configuration
 VITE_API_BASE_URL=http://localhost:8000/api/v1
 
-# Application Settings
-VITE_APP_NAME=MangaVerse
-VITE_APP_VERSION=1.0.0
-
-# Feature Flags (optional)
-VITE_ENABLE_ANALYTICS=false
-VITE_ENABLE_NOTIFICATIONS=true
 ```
 
 ### **🔐 Security Notes**
@@ -471,7 +464,6 @@ const useAuthStore = create((set) => ({
 
 ### **Code Quality Standards**
 - **🔍 Linting**: ESLint + Prettier for consistent formatting
-- **🧪 Testing**: Jest + React Testing Library
 - **📝 Type Safety**: TypeScript throughout the frontend
 - **🔒 Security**: Input validation and sanitization
 
@@ -495,11 +487,6 @@ uvicorn app.main:app --reload
 # Frontend development  
 npm run dev
 
-# Run tests
-npm test
-
-# Build for production
-npm run build
 ```
 
 ---

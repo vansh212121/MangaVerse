@@ -39,6 +39,10 @@ Transform manga discovery from a basic catalog browse into an intelligent, perso
 
 
 
+https://github.com/user-attachments/assets/77f81d3a-3c66-4b1f-b0b0-71ccd6731052
+
+
+
 ### **Application Preview**
 <table>
 <tr>
